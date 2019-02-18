@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New menu item</title>
+</head>
+<body>
+	<h1>Add a new menu item</h1>
+	<a href="{{ url_for('gdisconnect') }}">Logout</a><br><br>
+	<form action="{{ url_for('newMenuItem', restaurant_id = restaurant_id) }}" method="POST">
+		<label>Name: </label><input type="text" name="name"><br><br>
+		<label>Item Type:</label>
+		<input type="radio" name="type" value="Veg">Veg
+		<input type="radio" name="type" value="Non-Veg">Non-Veg
+		<input type="radio" name="type" value="Beverage">Beverage<br><br>
+		<label>Price: </label><input type="text" name="price"><br><br>
+		<input type="submit" value="Create">
+		<a href="{{ url_for('showMenu', restaurant_id = restaurant_id) }}">Cancel</a>
+	</form>
+</body>
+</html>

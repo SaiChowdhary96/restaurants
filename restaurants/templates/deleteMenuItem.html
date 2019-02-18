@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete Menu Item</title>
+</head>
+<body>
+	<h1>Are you sure you want to delete {{ "'"+item.name+"'" }} from
+		{{ "'"+restaurant.name+"'" }}??</h1>
+		<a href="{{ url_for('gdisconnect') }}">Logout</a><br><br>
+	<form action="{{ url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id = menu_id) }}" method="POST">
+		<input type="submit" value="Delete">
+		<a href="{{ url_for('showMenu', restaurant_id = restaurant.id) }}">Cancel</a>
+	</form>
+</body>
+</html>
